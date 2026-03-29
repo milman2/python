@@ -21,3 +21,16 @@ https://github.com/settings/keys
 ```shell
 git remote set-url origin git@github.com:milman2/python.git
 ```
+
+# TODO
+
+- FastAPI
+- Flask
+- django
+- NumPy
+- pandas
+- PyTorch
+- TensorFlow
+- Google Colab
+
+# VSCode
