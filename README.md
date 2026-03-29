@@ -1,2 +1,3 @@
 # python
-python
+
+python 정리
