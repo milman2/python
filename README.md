@@ -14,5 +14,10 @@ https://github.com/settings/keys
 
 # test
 ❯ ssh -T git@github.com
-Hi milman2! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+# https -> ssh
+
+```shell
+git remote set-url origin git@github.com:milman2/python.git
 ```
