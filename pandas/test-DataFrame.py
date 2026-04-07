@@ -1,10 +1,6 @@
 import pandas as pd
 
-# dict -> DataFrame
-dict_data = {'c0': [1, 2, 3], 'c1': [4, 5, 6], 'c2': [7, 8, 9], 'c3': [10, 11, 12], 'c4': [13, 14, 15]}
-df = pd.DataFrame(dict_data)
-print(type(df))
-print(df)
+# DataFrame/Construction.py
 
 # row index / column name
 df = pd.DataFrame([
@@ -57,7 +53,7 @@ df5 = df5.drop(columns=['수학'])
 print(df5)
 
 # 행 인덱스를 사용하여 행 1개를 선택
-label1 = df.loc['서준'] # 열 이름을 사용하여 열 1개를 선택
+label1 = df.loc['서준'] # 행 이름을 사용하여 행 1개를 선택
 position1 = df.iloc[0] # 행 번호를 사용하여 행 1개를 선택
 print(label1)
 print('\n')
@@ -151,99 +147,12 @@ print(df)
 df['미술'] = [80, 80, 100]
 print(df)
 
-exam_data = {
-  '이름': ['서준', '우현', '인아'],
-  '수학': [90, 80, 70],
-  '영어': [98, 89, 95],
-  '음악': [85, 95, 100],
-  '체육': [100, 90, 90]
-  }
-df = pd.DataFrame(exam_data)
 
-# 행 추가
-df.loc[3] = 0
-print(df)
-df.loc[4] = ['동규', 90, 80, 85, 95]
-print(df)
+# DataFrame/AddRow.py
+# DataFrame/ChangeValues.py
+# DataFrame/transpose.py
 
-# 행 복사
-df.loc['행5'] = df.loc[3]
-print(df)
-
-exam_data = {
-  '이름': ['서준', '우현', '인아'],
-  '수학': [90, 80, 70],
-  '영어': [98, 89, 95],
-  '음악': [85, 95, 100],
-  '체육': [100, 90, 90]
-  }
-df = pd.DataFrame(exam_data)
-df = df.set_index('이름') # multi-index : df.set_index(['수학', '음학'])
-# 값 변경
-df.iloc[0][3] = 80 # ChainedAssignmentError
-print(df)
-df.iloc[0, 3] = 80
-print(df)
-
-import warnings
-warnings.filterwarnings('ignore')
-df.loc['서준']['체육'] = 90 # ChainedAssignmentError
-print(df)
-
-df.loc['서준', '체육'] = 100
-print(df)
-
-df.loc['서준', ['음악', '체육']] = 50
-print(df)
-
-df.loc['서준', ['음악', '체육']] = 100, 50
-print(df)
-
-# 행,열 전치
-df = df.transpose() # 메소드 활용
-print(df)
-
-df = df.T # 클래스 속성 활요
-print(df)
-
-#
-dict_data = {
-  'c0': [1, 2, 3],
-  'c1': [4, 5, 6],
-  'c2': [7, 8, 9],
-  'c3': [10, 11, 12],
-  'c4': [13, 14, 15]
-  }
-df = pd.DataFrame(dict_data, index=['r0', 'r1', 'r2'])
-print(df)
-
-# reindex
-new_index = ['r0', 'r1', 'r2', 'r3', 'r4']
-ndf = df.reindex(index=new_index)
-print(ndf)
-
-ndf2 = df.reindex(index=new_index, fill_value=0)
-print(ndf2)
-
-ndf3 = df.reset_index()
-print(ndf3)
-
-ndf4 = df.reset_index(names='C00')
-print(ndf4)
-
-ndf5 = df.reset_index(drop=True)
-print(ndf5)
-
-# sort_index
-ndf = df.sort_index(ascending=False)
-print(ndf)
-
-ndf2 = df.sort_index(ascending=True)
-print(ndf2)
-
-# sort_values
-ndf = df.sort_values(by='c1', ascending=False)
-print(ndf)
-
-ndf2 = df.sort_values(by=['c3', 'c4'], ascending=[False, True])
-print(ndf2)
+# DataFrame/reindex.py
+# DataFrame/reset_index.py
+# DataFrame/sort_index.py
+# DataFrame/sort_values.py
