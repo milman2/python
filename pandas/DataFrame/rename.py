@@ -11,7 +11,7 @@ print(df)
 print(df.index)
 print(df.columns)
 
-df = df.rename(columns={'나이' : '연령', '성별' : '남녀', '학교' : '소속'})
+df = df.rename(columns={'나이' : '연령', '성별' : '남녀', '학교' : '소속'}) # inplace=True
 print(df)
 df = df.rename(index={'서준' : '학생1', '예은' : '학생2'})
 print(df)
